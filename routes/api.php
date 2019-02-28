@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('login', 'AuthController@login');
 Route::post('logout', 'AuthController@logout');
 
+Route::apiResource('photo', 'PhotoController');
 
 Route::middleware('refresh')->group(function($router) {
     $router->get('profile','UserController@profile');
